@@ -1,8 +1,8 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package javaapplication35;
+package misoperaciones;
 
 import java.util.Scanner;
 
@@ -10,37 +10,34 @@ import java.util.Scanner;
  *
  * @author meler
  */
-public class JavaApplication35 {
+public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
 
         int opcion;
 
         do {
-            funcionesOperaciones.mostrarMenu();
+            Operaciones.mostrarMenu();
 
             System.out.println("Seleccione una opción: ");
-            opcion = funcionesOperaciones.mostrarMenu(teclado);
+            opcion = Operaciones.leerEntero(teclado);
 
             switch (opcion) {
                 case 1:
-                    funcionesOperaciones.opcionComprobarPrimo(teclado);
+                    Operaciones.opcionComprobarPrimo(teclado);
                     break;
 
                 case 2:
-                    funcionesOperaciones.opcionComprobarDivisor(teclado);
+                    Operaciones.opcionComprobarDivisor(teclado);
                     break;
 
                 case 3:
-                    funcionesOperaciones.opcionSaludar(teclado);
+                    Operaciones.opcionSaludar(teclado);
                     break;
 
                 case 4:
-                    funcionesOperaciones.opcionEcuacionSegundoGrado(teclado);
+                    Operaciones.opcionEcuacionSegundoGrado(teclado);
                     break;
 
                 case 5:
