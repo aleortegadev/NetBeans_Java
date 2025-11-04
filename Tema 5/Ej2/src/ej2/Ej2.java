@@ -16,6 +16,9 @@ public class Ej2 {
      * Crea un programa en Java que cree un vector de 10 elementos de tipo
      * entero. Cargarlo, visualizarlo y pedir una posición por teclado y mostrar
      * el dato contenido en el vector en dicha posición.
+     *
+     * Mejorar el ejercicio anterior controlando que la posición sea correcta,
+     * si no lo es, volver pedir la posición.
      */
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
@@ -35,16 +38,22 @@ public class Ej2 {
             System.out.println("Los vectores son: ");
             System.out.println(vector[i]);
         }
-        
+        int posicion;
+
         do {
-        System.out.println("Introuzca la posición que quiere: ");
-        int posicion = teclado.nextInt();
-        
-        while(posicion >= 0 && posicion < vector.length);
-            int datoEnPosicion = vector[posicion];
+            System.out.println("Introuzca la posición que quiere: ");
+            posicion = teclado.nextInt();
 
-            System.out.println("El dato contenido en el indice "
-                    + posicion + " es " + datoEnPosicion);
-        }
-        }
+            if (posicion < 0 || posicion >= vector.length) {
+                System.out.println("Incorrecto: " + posicion + " es invalida. Debe estar entre el 0 - 9 ");
+            }
 
+        } while (posicion < 0 || posicion >= vector.length);
+
+        int datoEnPosicion = vector[posicion];
+
+        System.out.println("El dato contenido en el indice "
+                + posicion + " es " + datoEnPosicion);
+
+    }
+}
