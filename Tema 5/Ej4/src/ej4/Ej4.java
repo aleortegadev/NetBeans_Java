@@ -20,7 +20,22 @@ public class Ej4 {
      * vector y su media.
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        int tamaño = 10;
+        int [] miVector = new int [tamaño];
+        
+        cargarVector(miVector);
+        
+        visualizarVector(miVector);
+        
+        int sumaTotal = obtenerSuma(miVector);
+        
+        System.out.println("El resultado de la suma es: " + sumaTotal);
+        
+        double media = calcularMedia(sumaTotal, miVector.length);
+        System.out.println("La media de los elementos es: " + media);
+        
+        teclado.close();
     }
 
     public static void cargarVector(int[] vector) {
@@ -48,11 +63,13 @@ public class Ej4 {
             suma += elemento;
 
         }
-        
+
         return suma;
 
     }
-    
-    public static double calcularMedia(int media)
+
+    public static double calcularMedia(int suma, int longitud) {
+        return (double) suma / longitud;
+    }
 
 }
