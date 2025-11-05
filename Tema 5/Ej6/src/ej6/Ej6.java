@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ej4;
+package ej6;
 
 import java.util.Scanner;
 
@@ -10,66 +10,68 @@ import java.util.Scanner;
  *
  * @author meler
  */
-public class Ej4 {
+public class Ej6 {
 
     public static Scanner teclado = new Scanner(System.in);
 
     /**
      * Crea un programa en Java que cree un vector de 10 elementos de tipo
-     * entero. Cargarlo, visualizarlo, obtener la suma de los elementos del
-     * vector y su media.
+     * entero. Cargarlo, visualizarlo y mostar el número más alto y el más bajo
+     * del vector.
      */
     public static void main(String[] args) {
-
+        
         int tamaño = 10;
         int[] miVector = new int[tamaño];
-
+        
         cargarVector(miVector);
-
         visualizarVector(miVector);
-
-        int sumaTotal = obtenerSuma(miVector);
-
-        System.out.println("El resultado de la suma es: " + sumaTotal);
-
-        double media = calcularMedia(sumaTotal, miVector.length);
-        System.out.println("La media de los elementos es: " + media);
-
+        
+        mostrarAlto(miVector);
+        
+        mostrarBajo(miVector);
+        
         teclado.close();
+        
+        
     }
 
     public static void cargarVector(int[] vector) {
+
         for (int i = 0; i < vector.length; i++) {
-            System.out.println("Introduzca el numero entero: ");
+            System.out.println("Dime un numero: ");
             vector[i] = teclado.nextInt();
         }
-
     }
 
     public static void visualizarVector(int[] vector) {
 
         for (int num1 : vector) {
             System.out.println(num1);
-
         }
     }
 
-    public static int obtenerSuma(int[] vector) {
+    public static void mostrarAlto(int[] vector) {
 
-        int suma = 0;
+        int maximo = vector[0];
 
-        for (int elemento : vector) {
-
-            suma += elemento;
-
+        for (int i = 1; i < vector.length; i++) {
+            if (vector[i] > maximo) {
+                maximo = vector[i];
+            }
         }
 
-        return suma;
-
     }
 
-    public static double calcularMedia(int suma, int longitud) {
-        return (double) suma / longitud;
-    }
+    public static void mostrarBajo(int[] vector) {
 
+        int minimo = vector[0];
+
+        for (int i = 1; i < vector.length; i++) {
+            if (vector[i] < minimo) {
+                minimo = vector[i];
+
+            }
+        }
+    }
 }
